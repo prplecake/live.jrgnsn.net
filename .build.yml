@@ -5,7 +5,7 @@ packages:
 sources:
   - https://git.sr.ht/~mjorgensen/live.jrgnsn.net
 secrets:
-  - ac98df2d-3f62-46a4-ad25-f97b225a154e
+  - 0b3341ad-ec04-4663-bf58-c0ecb51027da
 tasks:
 - build: |
     cd live.jrgnsn.net
