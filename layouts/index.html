@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{.Title}}</title>
+    {{ $style := resources.Get "main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="brand">Drew DeVault codes live</a>
+      <a target="_blank" href="https://drewdevault.com">blog</a>
+      <a target="_blank" href="https://drewdevault.com/donate">donate</a>
+      <a target="_blank" href="archive">archive</a>
+    </nav>
+    {{.Content}}
+  </body>
+</html>

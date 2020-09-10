@@ -1,0 +1,16 @@
+image: alpine/edge
+packages:
+  - rsync
+  - hugo
+sources:
+  - https://git.sr.ht/~sircmpwn/live.drewdevault.com
+secrets:
+  - 160a72cf-34d6-47b7-928b-c13b42b4d4f6
+tasks:
+- build: |
+    cd live.drewdevault.com
+    hugo
+- upload: |
+    cd live.drewdevault.com
+    echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+    rsync -rP public/ deploy@drewdevault.com:/var/www/live.drewdevault.com/
